@@ -10,22 +10,24 @@ import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { AlertsComponent } from './alerts/alerts.component';
+import { RouterModule } from '@angular/router';
 
 library.add(faExternalLinkAlt);
 library.add(faUserCircle);
 
 @NgModule({
+    imports: [
+    BrowserModule,
+    RouterModule,
+    AppRoutingModule,
+    NgbModule,
+    FontAwesomeModule
+  ],
   declarations: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
     AlertsComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
