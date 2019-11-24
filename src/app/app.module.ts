@@ -8,6 +8,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HomeComponent } from './home/home.component';
+import { AlertsComponent } from './alerts/alerts.component';
 
 library.add(faExternalLinkAlt);
 library.add(faUserCircle);
@@ -15,7 +17,9 @@ library.add(faUserCircle);
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    HomeComponent,
+    AlertsComponent
   ],
   imports: [
     BrowserModule,
