@@ -1,0 +1,6 @@
+export const OAuthSettings = {
+  appId: 'YOUR_APP_ID_HERE',
+  scopes: [
+    "user.read"
+  ]
+};
