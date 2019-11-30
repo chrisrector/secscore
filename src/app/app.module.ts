@@ -11,6 +11,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { RouterModule } from '@angular/router';
+import { MsalModule } from '@azure/msal-angular';
+import { OAuthSettings } from '../oauth';
 
 library.add(faExternalLinkAlt);
 library.add(faUserCircle);
@@ -21,7 +23,10 @@ library.add(faUserCircle);
     RouterModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MsalModule.forRoot({
+      clientID: OAuthSettings.appId
+    })
   ],
   declarations: [
     AppComponent,

@@ -3,7 +3,7 @@
   <p class="lead">This app explores how to use the Microsoft Graph API to fetch Secure Score data.</p>
   <div *ngIf="authenticated; then welcomeUser else signInPrompt"></div>
   <ng-template #welcomeUser>
-    <h4>Welcome {{ user.displayName }}!</h4>
+    <h4>Welcome {{ authService.user.displayName }}!</h4>
     <p>Use the navigation bar at the top of the page to get started.</p>
   </ng-template>
   <ng-template #signInPrompt>
