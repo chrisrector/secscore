@@ -3,6 +3,7 @@ import { Client } from '@microsoft/microsoft-graph-client';
 
 import { AuthService } from './auth.service';
 import { Event } from './event';
+import {ControlScore } from './controlScore';
 import { AlertsService } from './alerts.service';
 
 @Injectable({
@@ -45,6 +46,20 @@ export class GraphService {
       return result.value;
     } catch (error) {
       this.alertsService.add('Could not get events', JSON.stringify(error, null, 2));
+    }
+  }
+
+  async getControlScores(): Promise<ControlScore[]> {
+    try {
+      let result =  await this.graphClient
+        .api('/security/secureScores')
+        .select('id,azureTenantId,currentScore,maxScore')
+        .orderby('id')
+        .get();
+
+      return result.value;
+    } catch (error) {
+      this.alertsService.add('Could not get control scores', JSON.stringify(error, null, 2));
     }
   }
 }

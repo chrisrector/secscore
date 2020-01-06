@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { MsalModule } from '@azure/msal-angular';
 import { OAuthSettings } from '../oauth';
 import { CalendarComponent } from './calendar/calendar.component';
+import { ScoresComponent } from './scores/scores.component';
 
 library.add(faExternalLinkAlt);
 library.add(faUserCircle);
@@ -34,7 +35,8 @@ library.add(faUserCircle);
     NavBarComponent,
     HomeComponent,
     AlertsComponent,
-    CalendarComponent
+    CalendarComponent,
+    ScoresComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
